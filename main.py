@@ -7,6 +7,7 @@
 
 import json
 import os
+import csv
 from tqdm import tqdm
 import argparse
 
@@ -25,40 +26,51 @@ class Main():
 
     # 2. Find old fields
     def CheckField(self):
-        oldFields = self.searchFieldDict.keys()
-        modified = []   # list of fields to modify
+        oldFields = [] # list of old fields
+        newFields = [] # list of new fields
+        modified = []  # list of fields to modify
+
+        # get all the old fields
+        for values in self.searchFieldDict :
+            oldFields.append(values['old field'])
+            newFields.append(values['new field'])
         
         # find all fields to modify
         for k in tqdm(oldFields, desc=f'[{self.filename}] : Check fields'):
             if k in str(self.jsonData):
-                if DEBUG:
-                    print(f' [{self.filename}] Found   : {k}')
                 modified.append(k)
 
         # modify json and write new one
         if len(modified) > 0:
-            self.Write(modified)
+            if DEBUG >= 2: 
+                print(f' [{self.filename}] Fields to modify : {modified}')
+            self.Write(modified, oldFields, newFields)
+        else : 
+            if DEBUG == 3: 
+                print(f' [{self.filename}] No fields to modify - Skip')
 
             
 
     # 3. Write new JSON
-    def Write(self, modified):
+    def Write(self, modified, oldFields, newFields):
+        jsonData = json.dumps(self.jsonData, indent=4)
 
         # replace all fields
         for oldField in tqdm(modified, desc=f'[{self.filename}] : Replace fields'):
-        #for oldField in modified:
-            fieldIndex = list(self.searchFieldDict.keys()).index(oldField)
-            newField = list(self.searchFieldDict.values())[fieldIndex]
+            fieldIndex = oldFields.index(oldField)
+            if DEBUG == 3: 
+                print(f' [{self.filename}] Old field {oldField} has index {fieldIndex}')
+            newField = newFields[fieldIndex]
+            if DEBUG == 3:
+                print(f' [{self.filename}] Old field {oldField} have associated new field {newField}')
 
-            if DEBUG : 
+            jsonData = jsonData.replace(oldField, newField)            
+            if DEBUG >= 2: 
                 print(f' [{self.filename}] Replace : {oldField} --> {newField}')
 
-            str(self.jsonData).replace(oldField, newField)
-
-
         # write new json
-        with open(f'./{self.newInspectorFolder}/{self.filename}', 'w') as f:
-            json.dump(self.jsonData, f, indent=2)
+        with open(f'./{self.newInspectorFolder}/{self.filename}', 'w', encoding='utf-8') as f:
+            f.write(jsonData)
 
 
 
@@ -68,10 +80,10 @@ if __name__ == '__main__' :
     
     # Cmd & Help
     parser = argparse.ArgumentParser(description= "Replace fields in Inspector", formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('-old',    action='store', type=str,  help='Path of the folder for the JSON inspectors to check',           required=False, default='./old')
-    parser.add_argument('-new',    action='store', type=str,  help='Path of the folder for the newly created JSON inspectors',      required=False, default='./new')
-    parser.add_argument('-fields',  action='store', type=str, help='Path of the CSV file listing all the fields to check & modify', required=False, default ='.fields.csv')
-    parser.add_argument('-debug',  action='store', type=bool, help='DEBUG mode - log more info about found & modified fields',      required=False, default =False)
+    parser.add_argument('-old',    action='store', type=str, help='Path of the folder for the JSON inspectors to check',           required=False, default='./old')
+    parser.add_argument('-new',    action='store', type=str, help='Path of the folder for the newly created JSON inspectors',      required=False, default='./new')
+    parser.add_argument('-fields', action='store', type=str, help='Path of the CSV file listing all the fields to check & modify', required=False, default ='fields.csv')
+    parser.add_argument('-debug',  action='store', type=int, help='DEBUG level - log more info from low (1) to many (3) (1, 2, 3)', required=False, default =1)
 
     args   = parser.parse_args()
     config = vars(args)
@@ -80,33 +92,12 @@ if __name__ == '__main__' :
     fields             = config.get('fields')
     DEBUG              = config.get('debug')
 
-    # Old field : new field
-    searchFieldDict = {
-        "TITLE_Id" : "Asset ID",
-        "TITLE_Name" : "Asset Name",
-        "TITLE_Duration" : "Duration",
-        "Show_Show" : "Show",
-        "ABC_Common_ShootAirDate" : "Shoot Air Date",
-        "abc-shoot-source" : "Shoot Feed Source",
-        "abc-shoot-sender" : "Shoot Sender",
-        "abc-shoot-location" : "Shoot Location",
-        "ABC_Mars_AssignmentOrIDNumber" : "Assignment Number",
-        "ABC_Mars _Restrictions" : "Restriction_Description",
-        "abc-visual-verification-status" : "Visual Verification",
-        "abc-asset-licensed" : "Licensed",
-        "abc-clearance" : "Clearance",
-        "abc-asset-credits" : "Credits",
-        "TITLE_Keywords" : "Keyword",
-        "ABC_Snapstream_Actor" : "Person",
-        "ABC_Avid_VideoID" : "Video ID",
-        "Package Name" : "Batch Name",
-        "ABC_Snapstream_StationCallsign" : "Call Sign",
-        "ABC_Snapstream_StationName" : "Station Name",
-        "ABC_Snapstream_SeriesTitle" : "Series Title",
-        "ABC_Snapstream_Description" : "Show Info",
-        "ABC_Snapstream_Actor" : "Actor",
-        "abc-mob-id" : "MOB ID"
-    }
+
+    # Get fields from CSV
+    with open(fields, 'r') as file:
+        csv_reader = csv.DictReader(file)
+        searchFieldDict = [row for row in csv_reader]
+
 
     # parse all jsons into directory
     jsons = os.listdir(oldInspectorFolder)

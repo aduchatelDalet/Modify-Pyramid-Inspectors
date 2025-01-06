@@ -1,25 +1,21 @@
-old field, new field
-TITLE_Id , Asset ID
-TITLE_Name , Asset Name
-TITLE_Duration , Duration
-Show_Show , Show
-ABC_Common_ShootAirDate , Shoot Air Date
-abc-shoot-source , Shoot Feed Source
-abc-shoot-sender , Shoot Sender
-abc-shoot-location , Shoot Location
-ABC_Mars_AssignmentOrIDNumber , Assignment Number
-ABC_Mars _Restrictions , Restriction_Description
-abc-visual-verification-status , Visual Verification
-abc-asset-licensed , Licensed
-abc-clearance , Clearance
-abc-asset-credits , Credits
-TITLE_Keywords , Keyword
-ABC_Snapstream_Actor , Person
-ABC_Avid_VideoID , Video ID
-Package Name , Batch Name
-ABC_Snapstream_StationCallsign , Call Sign
-ABC_Snapstream_StationName , Station Name
-ABC_Snapstream_SeriesTitle , Series Title
-ABC_Snapstream_Description , Show Info
-ABC_Snapstream_Actor , Actor
-abc-mob-id , MOB ID
+old field,new field
+Show_Show,Show
+ABC_Common_ShootAirDate,Shoot Air Date
+abc-shoot-source,Shoot Feed Source
+abc-shoot-sender,Shoot Sender
+abc-shoot-location,Shoot Location
+ABC_Mars_AssignmentOrIDNumber,Assignment Number
+ABC_Mars_Restrictions,Restriction_Description
+abc-visual-verification-status,Visual Verification
+abc-asset-licensed,Licensed
+abc-clearance,Clearance
+abc-asset-credits,Credits
+ABC_Snapstream_Actor,Person
+ABC_Avid_VideoID,Video ID
+PackageName,Batch Name
+ABC_Snapstream_StationCallsign,Call Sign
+ABC_Snapstream_StationName,Station Name
+ABC_Snapstream_SeriesTitle,Series Title
+ABC_Snapstream_Description,Show info
+ABC_Snapstream_Actor,Actor
+abc-mob-id,Mob ID

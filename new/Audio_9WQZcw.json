@@ -1,0 +1,695 @@
+{
+    "banner": {
+        "leftFields": [
+            {
+                "fieldName": "TITLE_Type",
+                "inputType": "TEXT",
+                "displayTemplate": {
+                    "__typename": "TextDisplay",
+                    "textTemplate": "CONVERT_TO_IMAGE"
+                },
+                "bReadOnly": false,
+                "hideBorder": false,
+                "showSeparator": false,
+                "isEmptyValueAllowed": false,
+                "allowClearField": false,
+                "showWhenNoData": true,
+                "valueTextStyle": {
+                    "ngStyle": {
+                        "line-clamp": 1,
+                        "line-height": 30
+                    }
+                }
+            },
+            {
+                "fieldName": "ITEM_MODIFIED_At",
+                "inputType": "DATETIME",
+                "hideBorder": true,
+                "textBefore": "Modified at:",
+                "valueTextStyle": {
+                    "ngStyle": {
+                        "color": "#1B1C1C",
+                        "font-size": 15,
+                        "font-family": "Roboto",
+                        "font-weight": 400,
+                        "line-clamp": 1,
+                        "line-height": 30
+                    }
+                },
+                "displayTemplate": {
+                    "__typename": "DateTimeDisplay",
+                    "dateTimeTemplate": "STRING"
+                },
+                "bReadOnly": false,
+                "showSeparator": false,
+                "isEmptyValueAllowed": false,
+                "allowClearField": false,
+                "showWhenNoData": true
+            },
+            {
+                "fieldName": "_SEPARATOR_",
+                "bReadOnly": false,
+                "hideBorder": false,
+                "showSeparator": false,
+                "isEmptyValueAllowed": false,
+                "allowClearField": false,
+                "showWhenNoData": true,
+                "valueTextStyle": {
+                    "ngStyle": {
+                        "line-clamp": 1,
+                        "line-height": 30
+                    }
+                }
+            },
+            {
+                "bReadOnly": true,
+                "fieldName": "TITLE_Duration",
+                "inputType": "DURATION",
+                "hideBorder": true,
+                "valueTextStyle": {
+                    "ngStyle": {
+                        "color": "#1B1C1C",
+                        "font-size": 15,
+                        "font-family": "Roboto",
+                        "font-weight": 400,
+                        "line-clamp": 1,
+                        "line-height": 30
+                    }
+                },
+                "displayTemplate": {
+                    "__typename": "DurationDisplay",
+                    "durationTemplates": "STRING"
+                },
+                "showSeparator": false,
+                "isEmptyValueAllowed": false,
+                "allowClearField": false,
+                "showWhenNoData": true
+            },
+            {
+                "fieldName": "_SEPARATOR_",
+                "valueTextStyle": {
+                    "ngStyle": {
+                        "color": "#1B1C1C",
+                        "font-size": 15,
+                        "font-family": "Roboto",
+                        "font-weight": 400,
+                        "line-clamp": 1,
+                        "line-height": 30
+                    }
+                },
+                "bReadOnly": false,
+                "hideBorder": false,
+                "showSeparator": false,
+                "isEmptyValueAllowed": false,
+                "allowClearField": false,
+                "showWhenNoData": true
+            },
+            {
+                "bReadOnly": true,
+                "fieldName": "TITLE_Name",
+                "valueTextStyle": {
+                    "ngStyle": {
+                        "color": "#1B1C1C",
+                        "font-size": 15,
+                        "line-clamp": 1,
+                        "font-family": "Roboto",
+                        "font-weight": 400,
+                        "text-transform": "uppercase",
+                        "line-height": 30
+                    },
+                    "limitation": 40
+                },
+                "hideBorder": false,
+                "showSeparator": false,
+                "isEmptyValueAllowed": false,
+                "allowClearField": false,
+                "showWhenNoData": true
+            }
+        ],
+        "rightFields": [
+            {
+                "fieldName": "Subscribed Users",
+                "bReadOnly": false,
+                "hideBorder": false,
+                "showSeparator": false,
+                "isEmptyValueAllowed": false,
+                "allowClearField": false,
+                "showWhenNoData": true,
+                "valueTextStyle": {
+                    "ngStyle": {
+                        "line-clamp": 1,
+                        "line-height": 30
+                    }
+                }
+            },
+            {
+                "fieldName": "Restriction_Status",
+                "bReadOnly": false,
+                "hideBorder": false,
+                "showSeparator": false,
+                "isEmptyValueAllowed": false,
+                "allowClearField": false,
+                "showWhenNoData": true,
+                "valueTextStyle": {
+                    "ngStyle": {
+                        "line-clamp": 1,
+                        "line-height": 30
+                    }
+                }
+            }
+        ]
+    },
+    "header": [
+        {
+            "layout": {
+                "columns": [
+                    {
+                        "leftFields": [
+                            {
+                                "fieldName": "TITLE_Video_PosterFrame",
+                                "valueTextStyle": {
+                                    "ngStyle": {
+                                        "color": "#595959",
+                                        "font-size": 12,
+                                        "font-family": "Roboto",
+                                        "font-weight": 400,
+                                        "line-clamp": 1,
+                                        "line-height": 30
+                                    }
+                                },
+                                "bReadOnly": false,
+                                "hideBorder": false,
+                                "showSeparator": false,
+                                "isEmptyValueAllowed": false,
+                                "allowClearField": false,
+                                "showWhenNoData": true
+                            }
+                        ],
+                        "relativeWidth": 35,
+                        "rightFields": []
+                    },
+                    {
+                        "leftFields": [
+                            {
+                                "fieldName": "TITLE_Name",
+                                "valueTextStyle": {
+                                    "ngStyle": {
+                                        "color": "#595959",
+                                        "font-size": 26,
+                                        "font-family": "Roboto-Medium",
+                                        "font-weight": 400,
+                                        "line-clamp": 1,
+                                        "line-height": 30
+                                    }
+                                },
+                                "bReadOnly": false,
+                                "hideBorder": false,
+                                "showSeparator": false,
+                                "isEmptyValueAllowed": false,
+                                "allowClearField": false,
+                                "showWhenNoData": true
+                            },
+                            {
+                                "fieldName": "Media Description",
+                                "inputType": "TEXT",
+                                "valueTextStyle": {
+                                    "ngStyle": {
+                                        "color": "#959595",
+                                        "font-size": 15,
+                                        "font-family": "Roboto",
+                                        "font-weight": 300,
+                                        "line-clamp": 1,
+                                        "line-height": 30
+                                    }
+                                },
+                                "displayTemplate": {
+                                    "__typename": "TextDisplay",
+                                    "textTemplate": "WITH_READ_MORE"
+                                },
+                                "isEmptyValueAllowed": true,
+                                "bReadOnly": false,
+                                "hideBorder": false,
+                                "showSeparator": false,
+                                "allowClearField": false,
+                                "showWhenNoData": true
+                            },
+                            {
+                                "fieldName": "HIDE_EMPTY_FIELDS",
+                                "bReadOnly": false,
+                                "hideBorder": false,
+                                "showSeparator": false,
+                                "isEmptyValueAllowed": false,
+                                "allowClearField": false,
+                                "showWhenNoData": true,
+                                "valueTextStyle": {
+                                    "ngStyle": {
+                                        "line-clamp": 1,
+                                        "line-height": 30
+                                    }
+                                }
+                            }
+                        ],
+                        "relativeWidth": 65,
+                        "rightFields": []
+                    }
+                ],
+                "SectionLayouttype": "ColumnLayout"
+            }
+        }
+    ],
+    "sections": [
+        {
+            "icon": {
+                "name": "Media Files",
+                "icon16": {
+                    "format": "DaletIconLibrary",
+                    "content": "822-file-media-16"
+                },
+                "icon24": {
+                    "format": "DaletIconLibrary",
+                    "content": "816-file-media-24"
+                }
+            },
+            "type": "FILES",
+            "label": "Media Files"
+        },
+        {
+            "icon": {
+                "name": "Story Log",
+                "icon16": {
+                    "format": "DaletIconLibrary",
+                    "content": "187-editor-16"
+                },
+                "icon24": {
+                    "format": "DaletIconLibrary",
+                    "content": "042-editor-24"
+                }
+            },
+            "type": "STORYLOG",
+            "label": "Story Log",
+            "maxCount": 5
+        },
+        {
+            "icon": {
+                "name": "Restriction",
+                "icon16": {
+                    "format": "DaletIconLibrary",
+                    "content": "200-error-16"
+                },
+                "icon24": {
+                    "format": "DaletIconLibrary",
+                    "content": "484-attention-24"
+                }
+            },
+            "type": "RESTRICTION",
+            "label": "Restriction"
+        },
+        {
+            "icon": {
+                "name": "Comments",
+                "icon16": {
+                    "format": "DaletIconLibrary",
+                    "content": "185-comment-16"
+                },
+                "icon24": {
+                    "format": "DaletIconLibrary",
+                    "content": "319-comment-24"
+                }
+            },
+            "type": "COMMENTS",
+            "label": "Comments"
+        },
+        {
+            "icon": {
+                "name": "To Do Lists",
+                "icon16": {
+                    "format": "DaletIconLibrary",
+                    "content": "376-task-16"
+                },
+                "icon24": {
+                    "format": "DaletIconLibrary",
+                    "content": "377-task-24"
+                }
+            },
+            "type": "TODOS",
+            "label": "To-Dos"
+        },
+        {
+            "icon": {
+                "name": "Distribution",
+                "icon16": {
+                    "format": "DaletIconLibrary",
+                    "content": "542-globe-16"
+                },
+                "icon24": {
+                    "format": "DaletIconLibrary",
+                    "content": "532-globe-24"
+                }
+            },
+            "type": "DISTRIBUTION",
+            "label": "Distribution"
+        },
+        {
+            "icon": {
+                "name": "Activity",
+                "icon16": {
+                    "format": "DaletIconLibrary",
+                    "content": "804-history-16"
+                },
+                "icon24": {
+                    "format": "DaletIconLibrary",
+                    "content": "601-history-24"
+                }
+            },
+            "type": "ACTIVITY",
+            "label": "Activity"
+        }
+    ],
+    "playground": [
+        {
+            "label": "Created at",
+            "fieldName": "ITEM_CREATED_At",
+            "inputType": "DATETIME",
+            "displayTemplate": {
+                "__typename": "DateTimeDisplay",
+                "dateTimeFormat": "DD/MM/YYYY HH:mm",
+                "dateTimeTemplate": "DATATIME"
+            },
+            "bReadOnly": false,
+            "hideBorder": false,
+            "showSeparator": false,
+            "isEmptyValueAllowed": false,
+            "allowClearField": false,
+            "showWhenNoData": true,
+            "valueTextStyle": {
+                "ngStyle": {
+                    "line-clamp": 1,
+                    "line-height": 30
+                }
+            }
+        },
+        {
+            "label": "Created by",
+            "fieldName": "ITEM_CREATED_By",
+            "bReadOnly": false,
+            "hideBorder": false,
+            "showSeparator": false,
+            "isEmptyValueAllowed": false,
+            "allowClearField": false,
+            "showWhenNoData": true,
+            "valueTextStyle": {
+                "ngStyle": {
+                    "line-clamp": 1,
+                    "line-height": 30
+                }
+            }
+        },
+        {
+            "label": "Category Path",
+            "fieldName": "TITLE_CategoryFullName",
+            "bReadOnly": false,
+            "hideBorder": false,
+            "showSeparator": false,
+            "isEmptyValueAllowed": false,
+            "allowClearField": false,
+            "showWhenNoData": true,
+            "valueTextStyle": {
+                "ngStyle": {
+                    "line-clamp": 1,
+                    "line-height": 30
+                }
+            }
+        },
+        {
+            "label": "Modified at",
+            "fieldName": "ITEM_MODIFIED_At",
+            "inputType": "DATETIME",
+            "displayTemplate": {
+                "__typename": "DateTimeDisplay",
+                "dateTimeFormat": "DD/MM/YYYY HH:mm",
+                "dateTimeTemplate": "DATATIME"
+            },
+            "bReadOnly": false,
+            "hideBorder": false,
+            "showSeparator": false,
+            "isEmptyValueAllowed": false,
+            "allowClearField": false,
+            "showWhenNoData": true,
+            "valueTextStyle": {
+                "ngStyle": {
+                    "line-clamp": 1,
+                    "line-height": 30
+                }
+            }
+        },
+        {
+            "label": "Modified by",
+            "fieldName": "ITEM_MODIFIED_By",
+            "bReadOnly": false,
+            "hideBorder": false,
+            "showSeparator": false,
+            "isEmptyValueAllowed": false,
+            "allowClearField": false,
+            "showWhenNoData": true,
+            "valueTextStyle": {
+                "ngStyle": {
+                    "line-clamp": 1,
+                    "line-height": 30
+                }
+            }
+        },
+        {
+            "label": "Title Id",
+            "fieldName": "TITLE_Id",
+            "bReadOnly": false,
+            "hideBorder": false,
+            "showSeparator": false,
+            "isEmptyValueAllowed": false,
+            "allowClearField": false,
+            "showWhenNoData": true,
+            "valueTextStyle": {
+                "ngStyle": {
+                    "line-clamp": 1,
+                    "line-height": 30
+                }
+            }
+        },
+        {
+            "label": "Item code",
+            "fieldName": "TITLE_ItemCode",
+            "bReadOnly": false,
+            "hideBorder": false,
+            "showSeparator": false,
+            "isEmptyValueAllowed": false,
+            "allowClearField": false,
+            "showWhenNoData": true,
+            "valueTextStyle": {
+                "ngStyle": {
+                    "line-clamp": 1,
+                    "line-height": 30
+                }
+            }
+        },
+        {
+            "label": "Duration",
+            "fieldName": "TITLE_Duration",
+            "inputType": "DURATION",
+            "displayTemplate": {
+                "__typename": "DurationDisplay",
+                "durationFormat": "HH:mm:ss",
+                "durationTemplates": "DURATION"
+            },
+            "bReadOnly": false,
+            "hideBorder": false,
+            "showSeparator": false,
+            "isEmptyValueAllowed": false,
+            "allowClearField": false,
+            "showWhenNoData": true,
+            "valueTextStyle": {
+                "ngStyle": {
+                    "line-clamp": 1,
+                    "line-height": 30
+                }
+            }
+        },
+        {
+            "bReadOnly": false,
+            "hideBorder": false,
+            "showSeparator": false,
+            "isEmptyValueAllowed": true,
+            "allowClearField": false,
+            "showWhenNoData": true,
+            "valueTextStyle": {
+                "ngStyle": {
+                    "line-clamp": 1,
+                    "line-height": 30
+                }
+            },
+            "fieldName": "abc-shoot-date",
+            "label": "Shoot Date"
+        },
+        {
+            "bReadOnly": false,
+            "hideBorder": false,
+            "showSeparator": false,
+            "isEmptyValueAllowed": true,
+            "allowClearField": false,
+            "showWhenNoData": true,
+            "valueTextStyle": {
+                "ngStyle": {
+                    "line-clamp": 1,
+                    "line-height": 30
+                }
+            },
+            "fieldName": "Shoot Feed Source",
+            "label": "Shoot Source"
+        },
+        {
+            "bReadOnly": false,
+            "hideBorder": false,
+            "showSeparator": false,
+            "isEmptyValueAllowed": true,
+            "allowClearField": false,
+            "showWhenNoData": true,
+            "valueTextStyle": {
+                "ngStyle": {
+                    "line-clamp": 1,
+                    "line-height": 30
+                }
+            },
+            "fieldName": "Shoot Location",
+            "label": "Shoot Location"
+        },
+        {
+            "bReadOnly": false,
+            "hideBorder": false,
+            "showSeparator": false,
+            "isEmptyValueAllowed": true,
+            "allowClearField": false,
+            "showWhenNoData": true,
+            "valueTextStyle": {
+                "ngStyle": {
+                    "line-clamp": 1,
+                    "line-height": 30
+                }
+            },
+            "fieldName": "Shoot Sender",
+            "label": "Shoot Sender"
+        },
+        {
+            "bReadOnly": false,
+            "hideBorder": false,
+            "showSeparator": false,
+            "isEmptyValueAllowed": true,
+            "allowClearField": false,
+            "showWhenNoData": true,
+            "valueTextStyle": {
+                "ngStyle": {
+                    "line-clamp": 1,
+                    "line-height": 30
+                }
+            },
+            "fieldName": "Visual Verification",
+            "label": "Visual Verification"
+        },
+        {
+            "bReadOnly": false,
+            "hideBorder": false,
+            "showSeparator": false,
+            "isEmptyValueAllowed": true,
+            "allowClearField": false,
+            "showWhenNoData": true,
+            "valueTextStyle": {
+                "ngStyle": {
+                    "line-clamp": 1,
+                    "line-height": 30
+                }
+            },
+            "fieldName": "Licensed",
+            "label": "Licensed"
+        },
+        {
+            "bReadOnly": false,
+            "hideBorder": false,
+            "showSeparator": false,
+            "isEmptyValueAllowed": true,
+            "allowClearField": false,
+            "showWhenNoData": true,
+            "valueTextStyle": {
+                "ngStyle": {
+                    "line-clamp": 1,
+                    "line-height": 30
+                }
+            },
+            "fieldName": "abc-asset-expiration-date",
+            "label": "Expiration Date"
+        },
+        {
+            "bReadOnly": false,
+            "hideBorder": false,
+            "showSeparator": false,
+            "isEmptyValueAllowed": true,
+            "allowClearField": false,
+            "showWhenNoData": true,
+            "valueTextStyle": {
+                "ngStyle": {
+                    "line-clamp": 1,
+                    "line-height": 30
+                }
+            },
+            "fieldName": "abc-asset-clearance",
+            "label": "Clearance"
+        },
+        {
+            "bReadOnly": false,
+            "hideBorder": false,
+            "showSeparator": false,
+            "isEmptyValueAllowed": true,
+            "allowClearField": false,
+            "showWhenNoData": true,
+            "valueTextStyle": {
+                "ngStyle": {
+                    "line-clamp": 1,
+                    "line-height": 30
+                }
+            },
+            "fieldName": "Credits",
+            "label": "Credits"
+        },
+        {
+            "bReadOnly": false,
+            "hideBorder": false,
+            "showSeparator": false,
+            "isEmptyValueAllowed": true,
+            "allowClearField": false,
+            "showWhenNoData": true,
+            "valueTextStyle": {
+                "ngStyle": {
+                    "line-clamp": 1,
+                    "line-height": 30
+                }
+            },
+            "fieldName": "abc-archived-requested",
+            "label": "Archive Requested"
+        },
+        {
+            "bReadOnly": true,
+            "hideBorder": false,
+            "showSeparator": false,
+            "isEmptyValueAllowed": true,
+            "allowClearField": false,
+            "showWhenNoData": true,
+            "valueTextStyle": {
+                "ngStyle": {
+                    "line-clamp": 1,
+                    "line-height": 30
+                }
+            },
+            "fieldName": "Original File Name",
+            "label": "Original File Name"
+        }
+    ],
+    "objectTypes": [
+        "AUDIO"
+    ]
+}
